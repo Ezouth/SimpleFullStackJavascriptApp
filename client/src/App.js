@@ -6,14 +6,18 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      concatedDates: undefined,
+      chartData: [
+        {
       savingslist: undefined,
       kwh: undefined,
       customers: fetch('/api/customers')
       .then(res => res.json())
-      .then(customers => this.setState({billlist: customers[0].billlist}, () => console.log("Customers found...", customers[0].billlist)))
-    };
+      .then(customers => this.setState({billlist: customers[0].billlist}, () => console.log("Customers found...", customers[3].concatedDates),{concatedDates: customers[3].concatedDates}))
+      }
+
+    ]
   }
+}
 
 
 

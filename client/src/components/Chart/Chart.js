@@ -24,6 +24,27 @@ class Chart extends Component {
     }
   }
 
+    componentDidMount(){
+      this.state = {
+      chartData: {
+        labels: [100,2,3,4,5,6],
+        datasets:[
+          {
+            label: "Price per month",
+            data: this.props.billlist,
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.6)',
+              'rgba(54, 109, 232, 0.6)',
+              'rgba(255, 206, 86, 0.6)',
+              'rgba(75, 192, 192, 0.6)',
+              'rgba(153,102,125, .6)'
+            ]
+          }
+        ]
+      }
+    }
+  }
+
   render(){
     console.log(this.props.billlist)
     return (
