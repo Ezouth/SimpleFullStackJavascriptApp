@@ -42,7 +42,7 @@ for (let i=0; i<5; i++){
   console.log(concatedDates);
 
 
-var test = [ data:
+var test = [
   {billlist: billlist},
   {savingslist: savingslist},
   {kwh: kwh},
