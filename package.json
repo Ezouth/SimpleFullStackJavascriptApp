@@ -1,0 +1,20 @@
+{
+  "name": "reactnode_solstice",
+  "version": "1.0.0",
+  "description": "A project demonstrating my capacity to use node and react",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "Tyler Whidden",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap4": "0.0.1-security",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "jQuery": "^1.7.4",
+    "router": "^1.3.3"
+  },
+  "devDependencies": {
+    "no
