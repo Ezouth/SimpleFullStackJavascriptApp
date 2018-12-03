@@ -14,14 +14,6 @@ class UtilityDataObject extends Component {
     };
   }
 
-//This is nonsense but this is where I want the variable to be passed
-  // componentDidMount(){
-  //   fetch('/api/data')
-  //     .then(res => res.json("concatedDates"))
-  //     .then(concatedDates => this.setState({concatedDates}, () => console.log('Dates fetched..', concatedDates)));
-
-      // .then(this.setState("concatedDates": concatedDates, "billlist": billlist, "savingslist": savingslist, "kwh": kwh));
-  //  }
 
   render() {
     return (

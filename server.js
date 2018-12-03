@@ -1,5 +1,6 @@
 const express = require('express');
-var router = express.Router();
+
+const app = express();
 const port = 5000;
 
 // first thing to do is parse the json file
@@ -27,12 +28,12 @@ for (let i=0; i<5; i++){
   }
 
 // lets see if it's logging correctly now
-  // console.log(yearlist);
-  // console.log(monthlist);
-  // console.log(billlist);
-  // console.log(savingslist);
-  // console.log(kwh);
-  // console.log(concatedDates);
+  console.log(yearlist);
+  console.log(monthlist);
+  console.log(billlist);
+  console.log(savingslist);
+  console.log(kwh);
+  console.log(concatedDates);
   /* excellent! Now I noticed that the format is a little peculiar.  It reads from most recent to least recent.
   To fix this all I need to do is a simple javascript array method
   */
@@ -40,13 +41,19 @@ for (let i=0; i<5; i++){
   // lets test it
   console.log(concatedDates);
 
-// now that that's done I need to make these variables available for the front end
 
-// this is close I think to what I want to do to pass these
+var test = [
+  {billlist: billlist},
+  {savingslist: savingslist},
+  {kwh: kwh},
+  {concatedDates: concatedDates}
+]
 
-router.get('/', function(req, res, next) {
-  res.json([{
-    billlist: "billlist",
-    kwh: "kwh",
-    savingslist: "savingslist",
-    concat
+console.log(test);
+app.get('/api/customers', (req, res) => {
+  const customers = test;
+  res.json(customers);
+});
+
+
+app.listen(port, () => console.log(`Server started on port ${port}`));
