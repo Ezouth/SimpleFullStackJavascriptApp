@@ -25,6 +25,7 @@ class Chart extends Component {
   }
 
   render(){
+    console.log(this.props.billlist)
     return (
       <div className="chart">
       <Bar

@@ -6,7 +6,6 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      billlist: undefined,
       concatedDates: undefined,
       savingslist: undefined,
       kwh: undefined,
