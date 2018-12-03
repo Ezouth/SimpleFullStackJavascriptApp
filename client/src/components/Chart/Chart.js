@@ -1,43 +1,46 @@
 import React, {Component} from 'react';
 import {Bar, Line, Pie} from 'react-chartjs-2';
 
-class Chart extends Component {
+class Customers extends Component {
   constructor(){
     super();
-    this.state =
-    {
+    this.state = {
+      customers: [],
+      chartData: {}
+    }
+  }
+  componentDidMount(){
       customers: fetch('/api/customers')
       .then(res => res.json())
       .then(customers => this.setState({customers}, () => console.log("Customers found...", customers)))
     }
 
-    }
+  // }
 
-static defaultProps = {
-  displayTitle: true,
-  displayLegend: true,
-  legendPosition: 'bottom'
-}
-
-
-  render(){
+  //   fetch('/api/customers')
+  //     .then(res => res.json())
+  //     .then(customers => this.setState({customers}, () => console.log("Customers found...", customers)))
+  // }
+  render() {
     return (
-      <div className="chart">
-      <Bar
-      data={this.state.customers.billlist}
-      options={{
-        title: {
-          text: 'Energy bill per month',
-          fontSize: 35
-        },
-        legend: {
-          position: 'right'
-        }
-      }}
-      />
+      <div>
+        <div classname="Chart">
+        <Bar
+          data={this.state.chartData}
+          options={{
+            maintainAspectRatio:false
+          }}
+          />
+        </div>
+        <h2>Customers</h2>
+        <ul>
+          {this.state.customers.map(customers=>
+            <li id="bills" key={customers.billlist}>{customers.concatedDates}</li>)}
+        </ul>
+
       </div>
-    )
+    );
   }
 }
 
-export default Chart;
+export default Customers;
