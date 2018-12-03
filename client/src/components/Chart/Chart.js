@@ -24,9 +24,6 @@ class Chart extends Component {
     }
   }
 
-  componentDidMount(){
-    
-  }
   render(){
     return (
       <div className="chart">
