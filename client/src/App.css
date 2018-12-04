@@ -1,21 +1,41 @@
 h1 {
-  font-size: 320%;
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+  font-size: 430%;
   font-weight: Lighter;
-  color: #fefbd8;
+  color: #696969;
+  letter-spacing: .2em;
 }
 
-p.large {
-  font-style: Helvetica;
-  font-size: 180%;
-  font-weight: Lighter;
-  color: #fefbd8;
+#large {
+  margin: 0px;
+  font-size: 200%;
+  font-weight: 300;
+  color: #3e4444;
 }
 
-body {
-  background-color: #82b74b;
+#medium {
+  margin: 3px;
+  font-size: 160%;
+  font-weight: Lighter;
+  color: #3e4444;
+}
+
+#test {
   color: #fefbd8;
 }
 
 .App {
   text-align: center;
+}
+
+div.chart {
+  width: 60%;
+  height: 80%;
+  padding-left: 20%;
+}
+
+body {
+  background-color: #dac292;
 }

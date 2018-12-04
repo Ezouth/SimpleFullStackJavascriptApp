@@ -35,12 +35,13 @@ class Chart extends Component {
                 label: "Price per month",
                 data: this.state.data,
                 backgroundColor: [
-                  'rgba(255, 229, 0, 0.6)',
-                  ' #96ceb4',
-                  'rgba(255, 106, 86, 0.6)',
-                  'rgba(75, 192, 192, 0.6)',
-                  '#ff6f69'
+                  '#BC8F8F',
+                  ' #DAA520',
+                  '#808000',
+                  '#A52A2A',
+                  '#008000'
                 ],
+                hoverBackgroundColor: '#ffff4d'
               }
             ]
           }
@@ -63,9 +64,20 @@ class Chart extends Component {
           fontSize: 35
         },
         legend: {
-          position: 'bottom'
-        }
-      }}
+          position: 'bottom',
+        },
+        scales: {
+        xAxes: [{
+            barPercentage: 0.8,
+            gridLines: false
+            }],
+        yAxes: [{
+         ticks: {
+            max: 160,
+            min: 0,
+            stepSize: 20
+          }
+        }]}}}
       />
       </div>
     )

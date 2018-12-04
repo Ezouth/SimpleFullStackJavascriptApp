@@ -33,8 +33,10 @@ class LineChart extends Component {
                 label: "Energy Usage Per Month",
                 data: this.state.kwh,
                 backgroundColor: [
-                  '#cccc00'
+                  'rgba(255, 229, 0, 0.6)'
+
                 ],
+                strokeColor: "rgba(220,220,220,0.8)",
               }
             ]
           }
@@ -55,8 +57,8 @@ class LineChart extends Component {
         title: {
           display: true,
           text: "Energy Usage Per Month",
-          fontSize: 55
-        }
+          fontSize: 35
+        },
       }}
       />
       </div>

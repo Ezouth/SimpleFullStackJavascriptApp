@@ -4,7 +4,6 @@ var Page1 = React.createClass({
   render: function(){
     return(
       <h1> Page 1 </h1>
-      
     )
   }
 });
