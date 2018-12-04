@@ -2,51 +2,14 @@ import React, {Component} from 'react';
 import {Bar, Line, Pie} from 'react-chartjs-2';
 
 class Chart extends Component {
-    constructor(){
-      super();
+    constructor(props){
+      super(props);
       this.state = {
-      chartData: {
-        labels: [100,2,3,4,5,6],
-        datasets:[
-          {
-            label: "Price per month",
-            data: [200,30,50,60,70,90],
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.6)',
-              'rgba(54, 109, 232, 0.6)',
-              'rgba(255, 206, 86, 0.6)',
-              'rgba(75, 192, 192, 0.6)',
-              'rgba(153,102,125, .6)'
-            ]
-          }
-        ]
+        chartData: props.chartData
       }
     }
-  }
-
-    componentDidMount(){
-      this.state = {
-      chartData: {
-        labels: [100,2,3,4,5,6],
-        datasets:[
-          {
-            label: "Price per month",
-            data: this.props.billlist,
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.6)',
-              'rgba(54, 109, 232, 0.6)',
-              'rgba(255, 206, 86, 0.6)',
-              'rgba(75, 192, 192, 0.6)',
-              'rgba(153,102,125, .6)'
-            ]
-          }
-        ]
-      }
-    }
-  }
 
   render(){
-    console.log(this.props.billlist)
     return (
       <div className="chart">
       <Bar
@@ -61,6 +24,9 @@ class Chart extends Component {
         }
       }}
       />
+      <Line
+      data={this.props.chartData}
+      width="600" height="250"/>
       </div>
     )
   }
