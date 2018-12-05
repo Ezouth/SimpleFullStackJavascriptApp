@@ -19,10 +19,10 @@ class LineChart extends Component {
 
       getChartData(){
 
-        customers: fetch('/api/customers')
+        fetch('/api/customers')
         .then(res => res.json())
         .then(customers => this.setState({kwh: customers[2].kwh}))
-        customers: fetch('/api/customers')
+        fetch('/api/customers')
         .then(res => res.json())
         .then(customers => this.setState({labels: customers[3].concatedDates}))
         .then(() => this.setState({
@@ -58,6 +58,9 @@ class LineChart extends Component {
           display: true,
           text: "Energy Usage per Month",
           fontSize: 35
+        },
+        legend: {
+          position: "bottom"
         },
         tooltips: {
           mode: 'x-axis'
