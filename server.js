@@ -28,30 +28,29 @@ for (let i=0; i<5; i++){
   }
 
 // lets see if it's logging correctly now
-  console.log(yearlist);
-  console.log(monthlist);
-  console.log(billlist);
-  console.log(savingslist);
-  console.log(kwh);
-  console.log(concatedDates);
+  // console.log(yearlist);
+  // console.log(monthlist);
+  // console.log(billlist);
+  // console.log(savingslist);
+  // console.log(kwh);
+  // console.log(concatedDates);
   /* excellent! Now I noticed that the format is a little peculiar.  It reads from most recent to least recent.
   To fix this all I need to do is a simple javascript array method
   */
   concatedDates.reverse();
   // lets test it
-  console.log(concatedDates);
+  // console.log(concatedDates);
 
 
-var test = [
+var mydata = [
   {billlist: billlist},
   {savingslist: savingslist},
   {kwh: kwh},
   {concatedDates: concatedDates}
 ]
 
-console.log(test);
 app.get('/api/customers', (req, res) => {
-  const customers = test;
+  const customers = mydata;
   res.json(customers);
 });
 

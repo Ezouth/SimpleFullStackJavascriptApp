@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Bar, Line} from 'react-chartjs-2';
+import {Line} from 'react-chartjs-2';
 
 class LineChart extends Component {
 
@@ -21,10 +21,10 @@ class LineChart extends Component {
 
         customers: fetch('/api/customers')
         .then(res => res.json())
-        .then(customers => this.setState({kwh: customers[2].kwh}, () => console.log(this.state.data)))
+        .then(customers => this.setState({kwh: customers[2].kwh}))
         customers: fetch('/api/customers')
         .then(res => res.json())
-        .then(customers => this.setState({labels: customers[3].concatedDates}, () => console.log('Concated dates found', this.state.labels)))
+        .then(customers => this.setState({labels: customers[3].concatedDates}))
         .then(() => this.setState({
           chartData: {
             labels: this.state.labels,
