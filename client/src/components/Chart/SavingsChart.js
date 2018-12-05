@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Bar, Line} from 'react-chartjs-2';
 
-class Chart extends Component {
+class BarChart extends Component {
 
     constructor(){
       super();
@@ -20,28 +20,27 @@ class Chart extends Component {
     }
 
       getChartData(){
-
         customers: fetch('/api/customers')
         .then(res => res.json())
-        .then(customers => this.setState({data: customers[0].billlist}, () => console.log(this.state.data)))
+        .then(customers => this.setState({savingslist: customers[1].savingslist}))
         customers: fetch('/api/customers')
         .then(res => res.json())
-        .then(customers => this.setState({labels: customers[3].concatedDates}, () => console.log('Concated dates found', this.state.labels)))
+        .then(customers => this.setState({labels: customers[3].concatedDates}))
         .then(() => this.setState({
           chartData: {
             labels: this.state.labels,
             datasets:[
               {
                 label: "$",
-                data: this.state.data,
+                data: this.state.savingslist,
                 backgroundColor: [
-                  '#c1946a',
                   '#86af49',
+                  '#e3eaa7',
                   '#808000',
-                  '#4ea237',
-                  '#008000'
+                  '#c1946a',
+                  '#405d27'
                 ],
-                hoverBackgroundColor: '#ffff4d'
+                hoverBackgroundColor: '#82b74b'
               }
             ]
           }
@@ -60,7 +59,7 @@ class Chart extends Component {
       options={{
         title: {
           display: true,
-          text: 'Bill per Month',
+          text: 'Savings per Month',
           fontSize: 35
         },
         legend: {
@@ -73,9 +72,9 @@ class Chart extends Component {
             }],
         yAxes: [{
          ticks: {
-            max: 160,
+            max: 20,
             min: 0,
-            stepSize: 20
+            stepSize: 2
           }
         }]}}}
       />
@@ -84,4 +83,4 @@ class Chart extends Component {
   }
 }
 
-export default Chart;
+export default BarChart;

@@ -30,7 +30,7 @@ class LineChart extends Component {
             labels: this.state.labels,
             datasets:[
               {
-                label: "Energy Usage Per Month",
+                label: "kWh (kilowatt hour)",
                 data: this.state.kwh,
                 backgroundColor: [
                   'rgba(255, 229, 0, 0.6)'
@@ -56,9 +56,12 @@ class LineChart extends Component {
       options={{
         title: {
           display: true,
-          text: "Energy Usage Per Month",
+          text: "Energy Usage per Month",
           fontSize: 35
         },
+        tooltips: {
+          mode: 'x-axis'
+        }
       }}
       />
       </div>
