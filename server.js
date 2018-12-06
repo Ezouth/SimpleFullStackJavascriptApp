@@ -2,6 +2,7 @@ const express = require('express');
 
 const app = express();
 const port = 5000;
+app.use(express.static(path.join('ReadNode_Solstice', 'client/build')));
 
 // first thing to do is parse the json file
 const utilityDataObject = require('./data.json');
