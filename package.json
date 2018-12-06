@@ -4,9 +4,9 @@
   "description": "A project demonstrating my capacity to use node and react",
   "main": "server.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "heroku-postbuild": "cd client && yarn && yarn run build",
-    "server": "nodemon index.js",
+    "server": "nodemon app.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
