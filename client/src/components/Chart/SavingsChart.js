@@ -20,10 +20,10 @@ class BarChart extends Component {
     }
 
       getChartData(){
-        fetch('murmuring-meadow-19180/api/customers')
+        fetch('/api/customers')
         .then(res => res.json())
         .then(customers => this.setState({savingslist: customers[1].savingslist}))
-        fetch('murmuring-meadow-19180/api/customers')
+        fetch('/api/customers')
         .then(res => res.json())
         .then(customers => this.setState({labels: customers[3].concatedDates}))
         .then(() => this.setState({
