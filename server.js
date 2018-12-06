@@ -1,7 +1,7 @@
 const express = require('express');
 
 const app = express();
-const port = 5000;
+const port = 3000;
 
 // first thing to do is parse the json file
 const utilityDataObject = require('./data.json');
