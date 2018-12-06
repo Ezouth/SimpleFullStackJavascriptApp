@@ -21,10 +21,10 @@ class Chart extends Component {
 
       getChartData(){
 
-        fetch('/api/customers')
+        fetch('murmuring-meadow-19180/api/customers')
         .then(res => res.json())
         .then(customers => this.setState({data: customers[0].billlist}))
-        fetch('/api/customers')
+        fetch('murmuring-meadow-19180/api/customers')
         .then(res => res.json())
         .then(customers => this.setState({labels: customers[3].concatedDates}))
         .then(() => this.setState({

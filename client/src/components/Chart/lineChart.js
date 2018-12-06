@@ -19,10 +19,10 @@ class LineChart extends Component {
 
       getChartData(){
 
-        fetch('/api/customers')
+        fetch('murmuring-meadow-19180/api/customers')
         .then(res => res.json())
         .then(customers => this.setState({kwh: customers[2].kwh}))
-        fetch('/api/customers')
+        fetch('murmuring-meadow-19180/api/customers')
         .then(res => res.json())
         .then(customers => this.setState({labels: customers[3].concatedDates}))
         .then(() => this.setState({
